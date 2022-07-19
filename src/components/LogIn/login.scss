@@ -1,0 +1,37 @@
+@import "../../App/AppGeneralStyle.scss";
+.login_container {
+  display: flex;
+  min-height: 83vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .login_form {
+    // max-width: 30vw;
+    color: white;
+    .select_box,
+    .input_box {
+      margin: 2em;
+      font-size: $SubHeader;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .input_box {
+      input {
+        width: 60%;
+        padding: 0 0.2em;
+        font-size: 0.7em;
+        border-radius: 5px;
+      }
+    }
+    .select_box {
+      select {
+        width: 60%;
+        font-size: 0.7em;
+        border-radius: 5px;
+      }
+    }
+  }
+}

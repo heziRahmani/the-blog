@@ -1,0 +1,20 @@
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { selectAllUsers } from "./usersSlice";
+import "./usersStyle.scss";
+export default function UsersList() {
+  const users = useSelector(selectAllUsers);
+
+  const renderedUsers = users.map((user) => (
+    <li key={user.id}>
+      <Link to={`/user/${user.id}`}>{user.name}</Link>
+    </li>
+  ));
+  return (
+    <section className='users_container'>
+      <h2>AUTHORS</h2>
+      <ul>{renderedUsers}</ul>
+    </section>
+  );
+}

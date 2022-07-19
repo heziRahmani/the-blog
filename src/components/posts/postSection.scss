@@ -1,0 +1,156 @@
+@import "../../App/AppGeneralStyle.scss"; /* add post form*/
+
+//mixin
+@mixin postCard {
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid $WhiteHeader;
+  color: $WhiteHeader;
+  overflow-wrap: break-word;
+  h3 {
+    font-size: $SubHeader;
+    padding: 0.5em;
+  }
+  p {
+    font-size: $body;
+    text-align: start;
+    padding: 0.5em;
+  }
+  /*single post btn*/
+  .btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1%;
+    button {
+      background-color: transparent;
+      border: none;
+      font-size: $body;
+      color: $WhiteBody;
+      margin: 0.3rem;
+    }
+  }
+}
+
+//add new post page
+.addPost_form_container {
+  width: 80%;
+  margin: 0 auto;
+  color: $WhiteHeader;
+  text-align: center;
+  height: 83vh;
+  .addPost_form_header {
+    padding: 1.5em;
+    font-size: $MedumeHeader;
+  }
+  .addPost_form {
+    display: flex;
+    flex-direction: column;
+    div {
+      width: 48%;
+      margin: 0 auto;
+      display: inline-block;
+      // flex-direction: column;
+
+      input,
+      select {
+        width: 100%;
+        max-width: 100%;
+        padding: 0.2em;
+        display: block;
+        border-radius: 5px;
+      }
+      .postAuthor {
+        margin-left: 4%;
+      }
+    }
+    .postTxt {
+      flex-direction: column;
+      gap: 0em;
+      padding: 1em 0;
+      textarea {
+        padding: 1em;
+        border-radius: 5px;
+        min-width: 100%;
+        resize: none;
+        min-height: 200px;
+      }
+    }
+    .btnBox {
+      .formBtn {
+        border: none;
+        border-radius: 5%;
+        background-color: transparent;
+        color: $WhiteHeader;
+        &:disabled {
+          color: lightgrey;
+        }
+        &:hover {
+          color: wheat;
+        }
+      }
+    }
+  }
+}
+/*post list */
+.postList_section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2em;
+  min-height: 80vh;
+  justify-content: center;
+  /*single post*/
+  .singlePost_box {
+    @include postCard;
+    .postCredit {
+      display: flex;
+
+      gap: 0.5em;
+      a {
+        color: $Turquoise;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+//edit form
+.addPost_form_container {
+  .btnBox {
+    button {
+      border: none;
+      border-radius: 5%;
+      background-color: transparent;
+      color: $WhiteHeader;
+      margin: 0.5em;
+      &:hover {
+        color: wheat;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  //add new post page
+  .addPost_form_container {
+    .addPost_form_header {
+      padding: 0.5em;
+    }
+    .addPost_form {
+      div {
+        width: 100%;
+        .postAuthor {
+          margin-left: 0%;
+        }
+      }
+    }
+  }
+  //postList
+  .postList_section {
+    .singlePost_box {
+      width: 80%;
+    }
+  }
+}

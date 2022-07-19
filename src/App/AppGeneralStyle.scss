@@ -1,0 +1,73 @@
+///colors
+//background_color
+$backGroundColor: #282c34;
+$backGroundColorLiter: rgb(104, 131, 188);
+$redialBackground: linear-gradient(
+  45deg,
+  rgba(104, 131, 188, 1) 0%,
+  rgba(40, 44, 52, 1) 100%
+);
+
+//header color
+$WhiteHeader: whitesmoke;
+//body color
+$WhiteBody: whitesmoke;
+$Turquoise: #42eaddff;
+//font size
+$BigHeader: 3em;
+$MedumeHeader: 2em;
+$SubHeader: 1.5em;
+$body: 1.2em;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  // background-color: #282c34;
+  text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(
+    45deg,
+    rgba(104, 131, 188, 1) 0%,
+    rgba(40, 44, 52, 1) 100%
+  );
+}
+.App {
+  text-align: center;
+  min-height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+ul {
+  list-style: none;
+}
+a,
+a:active {
+  color: $WhiteBody;
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(100, 116, 122);
+}
+a:hover {
+  color: wheat;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+}

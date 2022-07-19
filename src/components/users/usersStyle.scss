@@ -1,0 +1,36 @@
+@import "../../App/AppGeneralStyle.scss";
+
+//userList
+.users_container {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: wheat;
+  h2 {
+    font-size: $BigHeader;
+  }
+  ul {
+    font-size: $SubHeader;
+  }
+}
+
+//user
+.userPage_container {
+  min-height: 83vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: wheat;
+  h2 {
+    font-size: $BigHeader;
+  }
+  ol {
+    text-align: start;
+    font-size: $SubHeader;
+  }
+}

@@ -1,0 +1,99 @@
+@import "../../App/AppGeneralStyle.scss";
+//varubles
+$navBar_backGround_color: #4a515f;
+
+.mainHeader {
+  text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.15);
+  color: $WhiteHeader;
+  height: 14vh;
+  display: flex;
+  margin-bottom: 3vh;
+  justify-content: space-between;
+  align-items: center;
+  .title {
+    padding: 1em;
+    display: flex;
+    text-align: center;
+    font-size: $MedumeHeader;
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      -webkit-filter: drop-shadow(4px 4px 3px rgba(0, 0, 0, 0.7));
+      filter: drop-shadow(0px 4px 0px rgba(0, 0, 0, 0.15));
+    }
+  }
+  nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2em;
+      padding: 1em;
+      font-size: $body;
+      a {
+        &:active {
+          color: $WhiteBody;
+          text-decoration: none;
+        }
+        &:visited {
+          color: $WhiteBody;
+        }
+        &:hover {
+          color: wheat;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .mainHeader {
+    .title {
+      padding: 0.2em;
+      display: flex;
+      text-align: center;
+      font-size: 1em;
+    }
+  }
+}
+@media screen and(max-width:600px) {
+  .mainHeader {
+    height: auto;
+    flex-direction: column;
+
+    nav {
+      .navBarList {
+        display: flex;
+        font-size: 1em;
+        background-color: #4a515f;
+        position: fixed;
+        top: -10%;
+        left: 0;
+        right: 0;
+      }
+    }
+    .navBarOpen {
+      display: flex;
+      font-size: 1em;
+      background-color: #4a515f;
+      position: fixed;
+      top: 0% !important;
+      left: 0;
+      right: 0;
+      flex-wrap: wrap;
+    }
+  }
+}
+// @media screen and(max-width:420px) {
+//   .mainHeader {
+//     .navBarOpen {
+//       display: flex;
+//       font-size: 1em;
+//       background-color: #4a515f;
+//       position: fixed;
+//       top: 0% !important;
+//       left: 15% !important;
+//       right: 0;
+//     }
+//   }
+// }
