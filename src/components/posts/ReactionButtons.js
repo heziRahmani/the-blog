@@ -1,7 +1,11 @@
 import { set } from "date-fns";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { reactionAdded, reactionReduced } from "../posts/postsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  reactionAdded,
+  reactionReduced,
+  selectAllPosts,
+} from "../posts/postsSlice";
 
 const reactionEmoji = {
   thumbsUp: "👍",
@@ -15,6 +19,7 @@ const ReactionButtons = ({ post }) => {
   const [reactionTuggle, setReactionTuggle] = useState(false);
   const dispatch = useDispatch();
 
+  // console.log(post);
   const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
     return (
       <button
@@ -22,11 +27,13 @@ const ReactionButtons = ({ post }) => {
         type=''
         className='reactionButton'
         onClick={() => {
-          if (!reactionTuggle) {
-            dispatch(reactionAdded({ postId: post.id, reaction: name }));
-            setReactionTuggle(!reactionTuggle);
-          } else if (reactionTuggle) {
+          console.log(name);
+          console.log(post.reactions[name]);
+          if (post.reactions[name] > 0) {
             dispatch(reactionReduced({ postId: post.id, reaction: name }));
+            setReactionTuggle(!reactionTuggle);
+          } else if (post.reactions[name] == 0) {
+            dispatch(reactionAdded({ postId: post.id, reaction: name }));
             setReactionTuggle(!reactionTuggle);
           }
         }}>

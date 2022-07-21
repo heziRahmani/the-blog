@@ -111,6 +111,7 @@ const postsSlice = createSlice({
       //addds one to the selected reaction
       const { postId, reaction } = action.payload;
       const existingPost = state.posts.find((post) => post.id === postId);
+      // console.log(reaction);
       if (existingPost) {
         existingPost.reactions[reaction]--;
       }
@@ -192,6 +193,7 @@ const postsSlice = createSlice({
 export const selectAllPosts = (state) => state.posts.posts;
 export const getPostStatus = (state) => state.posts.status;
 export const getPostError = (state) => state.posts.error;
+export const getAllReaction = (state) => state.posts;
 
 export const getPostById = (state, postId) =>
   state.posts.posts.find((post) => post.id === postId);
